@@ -38,7 +38,7 @@ h1{margin:0 0 4px;font-size:1.9rem;line-height:1.15;letter-spacing:-.01em}
   display:flex;flex-direction:column;justify-content:space-between;transition:border-color .15s,background .15s}
 .door::after{display:none}
 .door .mini{position:absolute;right:12px;top:12px;width:40px;height:56px}
-.search{position:relative;margin:4px 0 12px}
+.search{position:relative;margin:10px 0 12px}
 .search>svg{position:absolute;left:13px;top:50%;width:18px;height:18px;transform:translateY(-50%);color:var(--soft);pointer-events:none}
 #q{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:8.6px 42px 11.4px 40px;-webkit-appearance:none;appearance:none}
 #q:focus{outline:none;border-color:var(--accent)}
@@ -49,14 +49,14 @@ h1{margin:0 0 4px;font-size:1.9rem;line-height:1.15;letter-spacing:-.01em}
 .empty small{font-size:.85rem}
 
 .door .name{padding-right:44px}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
 .top .today{margin:0}
 .mascot{flex:0 0 auto;display:flex;align-items:center;gap:2px;margin-right:-2px}
 .mascot img{width:50px;height:auto;display:block}
 .sub svg{width:18px;height:18px;flex:0 0 18px;display:block}
 .subs .sub{padding:7.4px 12px 4.6px}
 .subs .sub[data-sub="all"]{padding-top:7.9px;padding-bottom:4.1px}
-.sub svg,.sub .r{transform:translateY(-1.35px)}
+.sub svg,.sub .r{transform:translateY(-2px)}
 .dlg .btn{padding-top:10.6px;padding-bottom:9.4px}
 .sub[aria-pressed="true"] svg{width:22px;height:22px;flex-basis:22px;background:#fff;border-radius:50%;padding:3px;margin:-2px 0 -2px -4px}
 .empty svg{display:block;width:120px;height:auto;margin:0 auto 10px}
@@ -72,7 +72,7 @@ h1{margin:0 0 4px;font-size:1.9rem;line-height:1.15;letter-spacing:-.01em}
 .door[data-place="pantry"][aria-pressed="true"]::after{background:var(--pantry)}
 .door:focus-visible,button:focus-visible,input:focus-visible,.item:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 
-.subs{display:flex;gap:6px;overflow-x:auto;margin:-6px 0 14px;padding:2px 2px 4px;scrollbar-width:none}
+.subs{display:flex;gap:6px;overflow-x:auto;margin:-4px 0 12px;padding:2px 2px 4px;scrollbar-width:none}
 .subs::-webkit-scrollbar{display:none}
 .sub{flex:0 0 auto;font:inherit;font-weight:700;font-size:.92rem;border:2px solid var(--line);background:var(--surface);color:var(--soft);border-radius:99px;padding:7px 13px;cursor:pointer;display:flex;align-items:center;gap:5px}
 .sub .n{font-weight:400;font-size:.82rem;opacity:.8}
@@ -249,6 +249,40 @@ input[type=checkbox]:focus-visible{outline:3px solid var(--accent);outline-offse
 .loginerr{color:var(--bad);font-size:.85rem;margin:0}
 .who{text-align:center;font-size:.8rem;color:var(--soft);margin:6px 0 0}
 .who button{font:inherit;color:var(--soft);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+.fab{position:fixed;right:max(16px,calc(50% - 264px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:20;width:58px;height:58px;border-radius:50%;border:0;background:var(--accent);color:var(--onAccent,#fff);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 14px rgba(59,58,46,.22)}
+.fab svg{width:24px;height:24px}
+.wrap{padding-bottom:96px!important}
+#addDlg{border:2px solid var(--line);border-radius:22px;padding:0;background:var(--surface);color:var(--ink);width:min(94vw,440px);margin:auto}
+#addDlg::backdrop{background:rgba(25,29,22,.4)}
+#addDlg .dlg{padding-top:20px;padding-bottom:20px}
+#addDlg .whead{height:auto;margin-bottom:12px;position:static}
+#addDlg .add .row2{margin-top:12px}
+#addDlg .whead h3{margin:0!important}
+#addTitle.ok{color:var(--accentText)}
+#addDlg .add{border:0!important;padding:0!important;margin:0!important;background:transparent!important}
+#addDlg label.datebox{display:flex;margin:0;font-size:1rem}
+#addDlg #addName{padding-top:8.3px;padding-bottom:10.7px;height:47px}
+#addDlg #addQty{padding-top:2px!important}
+.addok{min-height:1.3em;margin:10px 0 0;text-align:center;font-family:"JuaLocal",sans-serif;font-size:.95rem;color:var(--accentText,#2F7D47)}
+.whead{position:sticky;top:0;z-index:3;background:var(--surface);display:flex;align-items:center;justify-content:space-between;gap:10px;height:70px;padding:0;margin-bottom:6px}
+.whead{align-items:flex-start!important}
+.whead h3{margin:0;transform:translateY(-1.2px)}
+#addClose{padding-top:8.3px;padding-bottom:7.7px}
+#addPick{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+#addPick .sub{padding:7.4px 12px 4.6px}
+#addPick .sub svg{transform:translateY(-1.5px)}
+.shopbtn{font-size:.92rem!important;line-height:1.5!important;padding:7.4px 12px 4.6px 10px!important}
+.shopbtn .n{height:20px;line-height:1;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;padding-top:1.95px;transform:translateY(-1.4px)}
+.shopbtn>svg{transform:translateY(-1.2px)}
+.item .nm{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.item .nm .qstep,.item .nm .qtag,.item .nm .lowtag{margin:0!important;vertical-align:0!important}
+.item .nm .lowtag{display:inline-flex;align-items:center;height:22px;padding:2px 8px 0!important;font-size:.75rem}
+.plantrow .nm{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.plantrow .nm .pst,.plantrow .nm .cdrop{margin:0!important;vertical-align:0!important}
+.plantrow .nm .pst{display:inline-flex;align-items:center;height:22px;padding:2px 8px 0!important}
+.item .nm{display:flex;align-items:center;flex-wrap:wrap;column-gap:6px;row-gap:4px}
+.item .nm .qstep,.item .nm .lowtag{margin-left:0!important;vertical-align:0!important}
+.item .nm .lowtag{display:inline-flex;align-items:center;height:22px;padding:2px 8px 0!important}
 </style>
 </head>
 <body>
@@ -277,19 +311,7 @@ input[type=checkbox]:focus-visible{outline:3px solid var(--accent);outline-offse
   </div>
   <div class="subs" id="subs" role="group" aria-label="세부 칸"></div>
 
-  <form class="add" id="addForm" autocomplete="off">
-    <div class="pick" id="addPick" role="group" aria-label="넣을 칸"></div>
-    <div class="row">
-      <input type="text" id="addName" placeholder="품목" aria-label="품목" maxlength="60">
-      <div class="qty" role="group" aria-label="수량"><button type="button" data-step="-1" aria-label="하나 빼기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button><input type="number" id="addQty" value="1" min="1" max="999" inputmode="numeric" aria-label="수량"><button type="button" data-step="1" aria-label="하나 더하기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button></div>
-    </div>
-    <div class="row row2">
-      <label class="datebox" id="dateBox" role="button" tabindex="0" aria-label="소비기한 고르기"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span id="dateTxt">달력</span><input type="hidden" id="addDate"></label>
-      <button type="submit" class="btn submit" id="addBtn">추가</button>
-    </div>
-  </form>
-
-  <div class="listhead"><h2 class="dh" id="listTitle"></h2><span>소비기한 가까운 순</span></div>
+    <div class="listhead"><h2 class="dh" id="listTitle"></h2><span>소비기한 가까운 순</span></div>
   <div class="search" role="search">
     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5L20 20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
     <input type="search" id="q" placeholder="전체 품목 검색" aria-label="품목 검색" autocomplete="off" maxlength="40">
@@ -300,6 +322,7 @@ input[type=checkbox]:focus-visible{outline:3px solid var(--accent);outline-offse
   <p class="who"><span id="who"></span> · <button type="button" id="logout">로그아웃</button></p>
 </div>
 
+<button type="button" class="fab" id="fab" aria-label="품목 등록"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button>
 <dialog id="cal" aria-label="소비기한 달력"><div class="cal">
   <div class="calhead">
     <button type="button" class="calnav" id="calPrev" aria-label="이전 달"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -319,6 +342,20 @@ input[type=checkbox]:focus-visible{outline:3px solid var(--accent);outline-offse
   <p class="shophint">구입 개수 선택 후 구입 완료를 누르면 재고에 추가</p>
   <ul class="shoplist" id="shopList"></ul>
   <div class="acts"><button type="button" class="btn ghost" id="shopClose" style="margin-left:auto">닫기</button><button type="button" class="btn" id="shopBuy" disabled>구입 완료</button></div>
+</div></dialog>
+<dialog id="addDlg" aria-label="품목 등록"><div class="dlg">
+  <div class="whead"><h3 class="dh" id="addTitle" tabindex="-1" autofocus style="outline:none">품목 등록</h3><button type="button" class="btn ghost" id="addClose">닫기</button></div>
+  <form class="add" id="addForm" autocomplete="off">
+    <div class="addpick" id="addPick" role="group" aria-label="넣을 칸"></div>
+    <div class="row">
+      <input type="text" id="addName" placeholder="품목" aria-label="품목" maxlength="60">
+      <div class="qty" role="group" aria-label="수량"><button type="button" data-step="-1" aria-label="하나 빼기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button><input type="number" id="addQty" value="1" min="1" max="999" inputmode="numeric" aria-label="수량"><button type="button" data-step="1" aria-label="하나 더하기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button></div>
+    </div>
+    <div class="row row2">
+      <label class="datebox" id="dateBox" role="button" tabindex="0" aria-label="소비기한 고르기"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span id="dateTxt">달력</span><input type="hidden" id="addDate"></label>
+      <button type="submit" class="btn submit" id="addBtn">추가</button>
+    </div>
+    </form>
 </div></dialog>
 <dialog id="dlg">
   <form class="dlg" method="dialog">
@@ -445,7 +482,8 @@ function render(){
     const red=l.some(([,v])=>v.qty!==0&&status(v.exp).cls==='bad');
     return '<button type="button" class="sub" data-sub="'+k+'" aria-pressed="'+(k===sub)+'">'+(ICONS[k]?'<svg viewBox="0 0 24 24" aria-hidden="true">'+ICONS[k]+'</svg>':'')+n+'<span class="n">'+l.length+'</span>'+(red?'<span class="r" aria-label="기한 지난 품목 있음"></span>':'')+'</button>'}).join('');
   document.querySelectorAll('#subs svg').forEach(fitIcon);
-  document.getElementById('addPick').innerHTML=SUBS[place].map(([k,n])=>'<button type="button" data-k="'+k+'" aria-pressed="'+(k===addSel[place])+'">'+n+'</button>').join('');
+  document.getElementById('addPick').innerHTML=SUBS[place].map(([k,n])=>'<button type="button" class="sub" data-k="'+k+'" aria-pressed="'+(k===addSel[place])+'">'+(ICONS[k]?'<svg viewBox="0 0 24 24" aria-hidden="true">'+ICONS[k]+'</svg>':'')+'<span>'+n+'</span></button>').join('');
+  if(document.getElementById('addDlg')&&document.getElementById('addDlg').open)document.querySelectorAll('#addPick svg').forEach(fitIcon);
   const where=sub==='all'?PLACES[place]:SUBNAME[sub];
   const qq=query.trim().toLowerCase().replace(/\s+/g,'');
   document.querySelector('.listhead span').hidden=!!qq;
@@ -499,13 +537,19 @@ dateBoxEl.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.prev
 document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{
   const d=todayDate();d.setDate(d.getDate()+Number(b.dataset.add));addDate.value=ymd(d);showDate();
 }));
+let addOkT=null;
+const addDlg=document.getElementById('addDlg');
+document.getElementById('fab').addEventListener('click',()=>{const sb=curSub[place];if(sb&&sb!=='all')addSel[place]=sb;
+  clearTimeout(addOkT);document.getElementById('addTitle').classList.remove('ok');document.getElementById('addTitle').textContent=PLACES[place]+' 품목 등록';render();addDlg.showModal();document.querySelectorAll('#addPick svg').forEach(fitIcon)});
+document.getElementById('addClose').addEventListener('click',()=>addDlg.close());
 document.getElementById('addForm').addEventListener('submit',e=>{
   e.preventDefault();if(!canWrite)return;
   const name=addName.value.trim();if(!name){addName.focus();return}
   const sub=addSel[place];
   const id=uid();
   items[id]={name,place,sub:validSub(place,sub)?sub:defSub(place),exp:addDate.value||'',low:false,qty:clampQ(addQty.value),created:Date.now()};
-  writeItem(id);addName.value='';addDate.value='';addQty.value=1;showDate();addName.focus();render();
+  writeItem(id);{const o=document.getElementById('addTitle'),base=PLACES[place]+' 품목 등록';o.textContent=name+' 등록 완료';o.classList.add('ok');clearTimeout(addOkT);addOkT=setTimeout(()=>{o.textContent=base;o.classList.remove('ok')},2000)}
+  addName.value='';addDate.value='';addQty.value=1;showDate();addName.focus();render();
 });
 
 document.querySelectorAll('.door').forEach(b=>b.addEventListener('click',()=>{
